@@ -1,14 +1,7 @@
 def main():
-
-	#Reading and printing the list of numbers:
-	print("Enter the numbers in your list: (Enter any alphabet to stop)\n")
-	list_is = []
-	while True:
-		element = input(" ")
-		if element.lower().isalpha():
-			break
-		else:
-			list_is.append(int(element))
+	#Reading the elements:
+	list_is = input("Enter the numbers in your list (separated by spaces):\n").split()
+	list_is = [int(item) for item in list_is]
 	print(f"The elements are:\n\t{list_is}")
 
 	#Sorting the list:
@@ -18,18 +11,9 @@ def main():
 		print(f"\nPass {i}:\nChecking for {list_is[i]}...")
 		for j in range(mark-1,-1,-1):
 			if list_is[mark] <= list_is[j]:
-				list_is[mark], list_is[j] = swap(list_is[mark], list_is[j])
+				list_is[mark], list_is[j] = list_is[j], list_is[mark])
 				mark -= 1
 			print(f"\t{list_is}")
-
-def swap(x, y):
-	'''
-	Returns the swapped values of x and y.
-	'''
-	x = x+y
-	y = x-y
-	x = x-y
-	return (x,y)
 
 if __name__ == '__main__':
 	main()
