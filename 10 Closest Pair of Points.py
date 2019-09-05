@@ -146,8 +146,8 @@ def in_mid(x_sorted, y_sorted, min_dist, closest_points):
 		#is already sorted) or if the list has lesser than 7 close points, we 
 		#can check for those number of points. 
 		for j in range(i + 1, min(i + 7, length)): #From the 2nd point till the
-												   #minimum of 7 nearest or 
-												   #total number of points.
+							   #minimum of 7 nearest or 
+							   #total number of points.
 			dist = distance(close_points[i], close_points[j])
 			if dist <= min_dist:
 			 	min_dist = dist
