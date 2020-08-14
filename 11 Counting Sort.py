@@ -12,15 +12,10 @@ def counting_sort(list_is, lower, upper):
 	return
 
 def main():
-	lower, upper = map(int, input('Enter the lower and upper limit separated by space:\n').split())
-	print("Enter the numbers in your list: (Enter any alphabet to stop)\n")
+	lower, upper = map(int, input('Enter the range (separated by space):\n').split())
 	list_is = []
-	while True:
-		element = input()
-		if element.lower().isalpha():
-			break
-		else:
-			list_is.append(int(element))
+	list_is = input("Enter the numbers in your list (separated by spaces):\n").split()
+	list_is = [int(item) for item in list_is]
 	print(f"The elements are:\n\t{list_is}")
 	counting_sort(list_is, lower, upper)
 
